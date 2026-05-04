@@ -1,5 +1,5 @@
 {
-  "name": "@acegalaxy/scheduler-runtime",
+  "name": "@acegalaxy-co/scheduler-runtime",
   "version": "0.1.0",
   "description": "Cross-project scheduler runtime: error wrapper + overlap lock + status tracking + Notion catalog sync. Project-agnostic; injects notify callback + catalog client.",
   "main": "index.ts",
@@ -13,8 +13,15 @@
   ],
   "author": "acegalaxy.co",
   "license": "UNLICENSED",
-  "private": true,
+  "private": false,
   "engines": {
     "node": ">=18"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acegalaxy-co/ace_commons-scheduler-runtime-nodejs.git"
   }
 }

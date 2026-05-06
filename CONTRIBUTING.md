@@ -1,4 +1,4 @@
-# Contributing to @acegalaxy/scheduler-runtime
+# Contributing to @kanelr/scheduler-runtime
 
 Thanks for your interest! This package is part of the [ace_commons](https://github.com/acegalaxy-co) collection.
 

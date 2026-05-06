@@ -1,7 +1,7 @@
-# @acegalaxy/scheduler-runtime
+# @kanelr/scheduler-runtime
 
-[![npm version](https://img.shields.io/npm/v/@acegalaxy%2Fscheduler-runtime.svg)](https://www.npmjs.com/package/@acegalaxy/scheduler-runtime)
-[![npm downloads](https://img.shields.io/npm/dm/@acegalaxy%2Fscheduler-runtime.svg)](https://www.npmjs.com/package/@acegalaxy/scheduler-runtime)
+[![npm version](https://img.shields.io/npm/v/@acegalaxy%2Fscheduler-runtime.svg)](https://www.npmjs.com/package/@kanelr/scheduler-runtime)
+[![npm downloads](https://img.shields.io/npm/dm/@acegalaxy%2Fscheduler-runtime.svg)](https://www.npmjs.com/package/@kanelr/scheduler-runtime)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node](https://img.shields.io/node/v/@acegalaxy%2Fscheduler-runtime.svg)](https://nodejs.org)
 
@@ -30,7 +30,7 @@
 ## Install
 
 ```bash
-npm install @acegalaxy/scheduler-runtime node-cron
+npm install @kanelr/scheduler-runtime node-cron
 ```
 
 ## Quick start
@@ -39,7 +39,7 @@ npm install @acegalaxy/scheduler-runtime node-cron
 
 ```js
 const cron = require("node-cron");
-const runtime = require("@acegalaxy/scheduler-runtime");
+const runtime = require("@kanelr/scheduler-runtime");
 
 // One-time configuration
 runtime.configure({

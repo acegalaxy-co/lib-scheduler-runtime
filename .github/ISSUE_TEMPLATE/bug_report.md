@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a defect in @acegalaxy/scheduler-runtime
+about: Report a defect in @kanelr/scheduler-runtime
 title: "[bug] "
 labels: bug
 ---

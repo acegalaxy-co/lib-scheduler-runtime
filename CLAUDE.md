@@ -1,4 +1,4 @@
-# @acegalaxy/scheduler-runtime
+# @kanelr/scheduler-runtime
 
 > **NPM commons library** — Cross-project scheduler runtime: error wrapper + overlap lock + status tracking + Notion catalog sync.
 > Cross-cutting rules: see framework `../../rules/00-index.md`.

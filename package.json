@@ -4,10 +4,11 @@
   "description": "Notion-backed cron catalog for Node.js — see all your scheduled jobs in one Notion table, with auto-tracked status, last run, and errors. Pluggable cron adapter + reporter + status tracker.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "node --test test/wrappers.test.js",
+    "test": "node --test test/*.test.js",
     "build": "tsc",
     "prepublishOnly": "npm run build",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "pretest": "npm run build"
   },
   "keywords": [
     "scheduler",

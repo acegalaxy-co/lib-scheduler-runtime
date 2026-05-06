@@ -2,9 +2,12 @@
   "name": "@acegalaxy/scheduler-runtime",
   "version": "0.1.0",
   "description": "Notion-backed cron catalog for Node.js — see all your scheduled jobs in one Notion table, with auto-tracked status, last run, and errors. Pluggable cron adapter + reporter + status tracker.",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "node --test test/wrappers.test.js"
+    "test": "node --test test/wrappers.test.js",
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "clean": "rm -rf dist"
   },
   "keywords": [
     "scheduler",
@@ -30,5 +33,23 @@
   "bugs": {
     "url": "https://github.com/acegalaxy-co/ace_commons-scheduler-runtime-nodejs/issues"
   },
-  "homepage": "https://github.com/acegalaxy-co/ace_commons-scheduler-runtime-nodejs#readme"
+  "homepage": "https://github.com/acegalaxy-co/ace_commons-scheduler-runtime-nodejs#readme",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    "SECURITY.md"
+  ],
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "@types/node": "^20.0.0"
+  }
 }

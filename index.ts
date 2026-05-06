@@ -15,13 +15,13 @@
 //   - status persistence (file/db) — inject via statusTracker
 //   - catalog gating (PROD-only, env-gated) — inject via catalog.enabled
 
-import * as lock from "./lib/lock.ts";
-import * as status from "./lib/status.ts";
-import * as reporter from "./lib/reporter.ts";
-import * as catalog from "./lib/catalog.ts";
-import type { ErrorReporter } from "./lib/reporter.ts";
-import type { StatusTracker } from "./lib/status.ts";
-import type { CatalogConfig } from "./lib/catalog.ts";
+import * as lock from "./lib/lock";
+import * as status from "./lib/status";
+import * as reporter from "./lib/reporter";
+import * as catalog from "./lib/catalog";
+import type { ErrorReporter } from "./lib/reporter";
+import type { StatusTracker } from "./lib/status";
+import type { CatalogConfig } from "./lib/catalog";
 
 export type WrappedJob = () => Promise<void>;
 export type WrappedReportJob = (mode?: string) => Promise<void>;

@@ -1,23 +1,35 @@
 # @acegalaxy/scheduler-runtime
 
-Cross-project scheduler runtime for Node.js. Wraps cron jobs with:
+> **Notion-backed cron catalog** — see all your scheduled jobs in one Notion table, with status, last run, and errors auto-tracked. An alternative to BullMQ-only / Inngest when you want a human-readable, ops-friendly source of truth that lives where your team already works.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen)](package.json)
+
+## Why
+
+- **Visibility for ops** — every cron in the company shows up in one Notion DB. PM, ops, and on-call all see the same row.
+- **No new dashboard.** Status / last run / errors flow into Notion fields you can filter, sort, comment on.
+- **Bring-your-own cron.** Works on top of `node-cron`, PM2 `cron_restart`, or any adapter exposing `.schedule()`.
+- **Fire-and-forget catalog sync.** Notion failures NEVER bubble into your jobs.
+- **Project-agnostic.** Cron adapter, error reporter, status tracker, Notion DB id + token are ALL injected. The runtime hardcodes nothing.
+
+## What's in the box
+
 - **Overlap lock** — same-job re-entry skipped
 - **Report lock** — critical reports pause background jobs
 - **Pluggable error reporter** — project injects Telegram routing / cooldown
 - **Pluggable status tracker** — project injects file/DB persistence
 - **Notion catalog auto-sync** — fire-and-forget upsert per registration
 
-Project-agnostic: cron library, error reporter, status tracker, Notion DB ID + token are ALL injected. Commons does NOT hardcode any project-specific concern.
-
 ## Install
 
-In a sibling project (e.g. `projects_repos/imba/ace_ace_nexus-one_nodejs/`):
-
-```js
-const runtime = require("../../../ace_commons/scheduler-runtime-nodejs");
+```bash
+npm install @acegalaxy/scheduler-runtime node-cron
 ```
 
 ## Quick start
+
+**1. Register a cron job**
 
 ```js
 const cron = require("node-cron");
@@ -43,6 +55,14 @@ runtime.configure({
 runtime.scheduleJob("morning-check", "30 8 * * *", runMorningCheck);
 runtime.scheduleJob("daily-report",  "0 18 * * *", runDailyReport, { isReport: true });
 ```
+
+**2. View status in Notion**
+
+Open your catalog DB. Each registered job appears as a row with `Name`, `Cron`, `Project`, `Host`, `Source File`, `Schedule TZ`, and `Last Reviewed` auto-populated. Add views per project / per host as needed.
+
+**3. Get alerted on failure**
+
+Your injected `reporter(label, err)` is called whenever a wrapped job throws. Pipe it to Telegram, Slack, PagerDuty — whatever your team already uses. The status tracker also flips the row to `failed` so on-call can triage from Notion directly.
 
 ## API
 

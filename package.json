@@ -1,7 +1,7 @@
 {
-  "name": "@acegalaxy-co/scheduler-runtime",
+  "name": "@acegalaxy/scheduler-runtime",
   "version": "0.1.0",
-  "description": "Cross-project scheduler runtime: error wrapper + overlap lock + status tracking + Notion catalog sync. Project-agnostic; injects notify callback + catalog client.",
+  "description": "Notion-backed cron catalog for Node.js — see all your scheduled jobs in one Notion table, with auto-tracked status, last run, and errors. Pluggable cron adapter + reporter + status tracker.",
   "main": "index.ts",
   "scripts": {
     "test": "node --test test/wrappers.test.js"
@@ -9,19 +9,26 @@
   "keywords": [
     "scheduler",
     "cron",
-    "ace-commons"
+    "notion",
+    "catalog",
+    "status-tracker",
+    "pm2"
   ],
-  "author": "acegalaxy.co",
-  "license": "UNLICENSED",
+  "author": "ACE Galaxy <hello@acegalaxy.co>",
+  "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/acegalaxy-co/ace_commons-scheduler-runtime-nodejs.git"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/acegalaxy-co/ace_commons-scheduler-runtime-nodejs/issues"
+  },
+  "homepage": "https://github.com/acegalaxy-co/ace_commons-scheduler-runtime-nodejs#readme"
 }

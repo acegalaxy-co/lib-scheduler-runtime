@@ -1,5 +1,11 @@
 # @acegalaxy/scheduler-runtime
 
+[![npm version](https://img.shields.io/npm/v/@acegalaxy%2Fscheduler-runtime.svg)](https://www.npmjs.com/package/@acegalaxy/scheduler-runtime)
+[![npm downloads](https://img.shields.io/npm/dm/@acegalaxy%2Fscheduler-runtime.svg)](https://www.npmjs.com/package/@acegalaxy/scheduler-runtime)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node](https://img.shields.io/node/v/@acegalaxy%2Fscheduler-runtime.svg)](https://nodejs.org)
+
+
 > **Notion-backed cron catalog** — see all your scheduled jobs in one Notion table, with status, last run, and errors auto-tracked. An alternative to BullMQ-only / Inngest when you want a human-readable, ops-friendly source of truth that lives where your team already works.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)

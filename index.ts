@@ -1,6 +1,6 @@
 "use strict";
 
-// @kanelr/scheduler-runtime — see README.md
+// @acegalaxy/scheduler-runtime — see README.md
 //
 // Public API:
 //   configure(opts)                  one-time runtime config (catalog, reporter, status tracker)
@@ -138,7 +138,7 @@ export function scheduleJob(
 
 export const isReportRunning = lock.isReportRunning;
 
-// CommonJS interop: keep existing `const r = require("@kanelr/scheduler-runtime")` callers.
+// CommonJS interop: keep existing `const r = require("@acegalaxy/scheduler-runtime")` callers.
 module.exports = {
   configure,
   scheduleJob,

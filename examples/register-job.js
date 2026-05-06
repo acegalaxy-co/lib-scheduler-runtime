@@ -1,11 +1,11 @@
-// register-job — minimal example for @kanelr/scheduler-runtime
+// register-job — minimal example for @acegalaxy/scheduler-runtime
 //
 // Setup:
 //   npm install
 //   npm run build
 //   node examples/register-job.js
 
-const { configure, scheduleJob } = require("@kanelr/scheduler-runtime");
+const { configure, scheduleJob } = require("@acegalaxy/scheduler-runtime");
 
 configure({
   token: process.env.NOTION_TOKEN,

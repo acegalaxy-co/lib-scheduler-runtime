@@ -3,7 +3,7 @@
 const { test, beforeEach } = require("node:test");
 const assert = require("node:assert");
 
-const runtime = require("../index");
+const runtime = require("../dist/index");
 const { lock, status, reporter, catalog } = runtime._internals;
 
 beforeEach(() => {

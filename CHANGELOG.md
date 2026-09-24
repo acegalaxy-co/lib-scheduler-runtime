@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-09-24
+
+### Changed
+- Renamed from `@acegalaxy/scheduler-runtime` to `@acegalaxy/lib-scheduler-runtime`; private git-dep (`github:acegalaxy-co/lib-scheduler-runtime#v0.2.0`); npm package deprecated.
+
 ## [0.1.0] - 2026-05-06
 
 ### Added
@@ -15,5 +20,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - TypeScript source with `.d.ts` declarations shipped in `dist/`.
 - MIT license.
 
-[Unreleased]: https://github.com/acegalaxy-co/ace_commons-scheduler-runtime-nodejs/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/acegalaxy-co/ace_commons-scheduler-runtime-nodejs/releases/tag/v0.1.0
+[Unreleased]: https://github.com/acegalaxy-co/lib-scheduler-runtime/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/acegalaxy-co/lib-scheduler-runtime/releases/tag/v0.1.0

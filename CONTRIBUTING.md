@@ -1,4 +1,4 @@
-# Contributing to @acegalaxy/scheduler-runtime
+# Contributing to @acegalaxy/lib-scheduler-runtime
 
 Thanks for your interest! This package is part of the [ace_commons](https://github.com/acegalaxy-co) collection.
 
@@ -12,8 +12,8 @@ Thanks for your interest! This package is part of the [ace_commons](https://gith
 ## Dev setup
 
 ```bash
-git clone https://github.com/acegalaxy-co/ace_commons-scheduler-runtime-nodejs.git
-cd ace_commons-scheduler-runtime-nodejs
+git clone https://github.com/acegalaxy-co/lib-scheduler-runtime.git
+cd lib-scheduler-runtime
 npm install
 npm test
 ```
@@ -28,7 +28,7 @@ npm test
 
 ## Reporting bugs / requesting features
 
-Open an issue at <https://github.com/acegalaxy-co/ace_commons-scheduler-runtime-nodejs/issues>.
+Open an issue at <https://github.com/acegalaxy-co/lib-scheduler-runtime/issues>.
 
 ## Code of Conduct
 

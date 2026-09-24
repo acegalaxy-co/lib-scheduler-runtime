@@ -1,11 +1,11 @@
-// register-job — minimal example for @acegalaxy/scheduler-runtime
+// register-job — minimal example for @acegalaxy/lib-scheduler-runtime
 //
 // Setup:
 //   npm install
 //   npm run build
 //   node examples/register-job.js
 
-const { configure, scheduleJob } = require("@acegalaxy/scheduler-runtime");
+const { configure, scheduleJob } = require("@acegalaxy/lib-scheduler-runtime");
 
 configure({
   token: process.env.NOTION_TOKEN,

@@ -1,9 +1,9 @@
-# @acegalaxy/scheduler-runtime
+# @acegalaxy/lib-scheduler-runtime
 
-[![npm version](https://img.shields.io/npm/v/@acegalaxy%2Fscheduler-runtime.svg)](https://www.npmjs.com/package/@acegalaxy/scheduler-runtime)
-[![npm downloads](https://img.shields.io/npm/dm/@acegalaxy%2Fscheduler-runtime.svg)](https://www.npmjs.com/package/@acegalaxy/scheduler-runtime)
+[![npm version](https://img.shields.io/npm/v/@acegalaxy%2Flib-scheduler-runtime.svg)](https://www.npmjs.com/package/@acegalaxy/lib-scheduler-runtime)
+[![npm downloads](https://img.shields.io/npm/dm/@acegalaxy%2Flib-scheduler-runtime.svg)](https://www.npmjs.com/package/@acegalaxy/lib-scheduler-runtime)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node](https://img.shields.io/node/v/@acegalaxy%2Fscheduler-runtime.svg)](https://nodejs.org)
+[![Node](https://img.shields.io/node/v/@acegalaxy%2Flib-scheduler-runtime.svg)](https://nodejs.org)
 
 
 > **Notion-backed cron catalog** — see all your scheduled jobs in one Notion table, with status, last run, and errors auto-tracked. An alternative to BullMQ-only / Inngest when you want a human-readable, ops-friendly source of truth that lives where your team already works.
@@ -30,7 +30,7 @@
 ## Install
 
 ```bash
-npm install @acegalaxy/scheduler-runtime node-cron
+"@acegalaxy/lib-scheduler-runtime": "github:acegalaxy-co/lib-scheduler-runtime#v0.2.0"
 ```
 
 ## Quick start
@@ -39,7 +39,7 @@ npm install @acegalaxy/scheduler-runtime node-cron
 
 ```js
 const cron = require("node-cron");
-const runtime = require("@acegalaxy/scheduler-runtime");
+const runtime = require("@acegalaxy/lib-scheduler-runtime");
 
 // One-time configuration
 runtime.configure({

@@ -205,6 +205,66 @@ test("catalog alertOnce called once per kind on failure", async () => {
   }
 });
 
+test("isJobEnabled returns true when catalog not configured", async () => {
+  assert.equal(await catalog.isJobEnabled("x"), true);
+});
+
+test("isJobEnabled returns false when row Status=Disabled", async () => {
+  const origFetch = global.fetch;
+  global.fetch = async () => ({
+    ok: true,
+    json: async () => ({ results: [{ id: "p1", Status: { select: { name: "Disabled" } } }] }),
+  });
+  try {
+    catalog.configure({ token: "tok", dbId: "db123", project: "test" });
+    assert.equal(await catalog.isJobEnabled("myjob"), false);
+  } finally {
+    global.fetch = origFetch;
+  }
+});
+
+test("isJobEnabled fail-open on fetch error", async () => {
+  const origFetch = global.fetch;
+  global.fetch = async () => { throw new Error("ENOTFOUND api.notion.com"); };
+  try {
+    catalog.configure({ token: "tok", dbId: "db123", project: "test" });
+    assert.equal(await catalog.isJobEnabled("myjob"), true);
+  } finally {
+    global.fetch = origFetch;
+  }
+});
+
+test("isJobEnabled fail-open when resp.ok false", async () => {
+  const origFetch = global.fetch;
+  global.fetch = async () => ({ ok: false, status: 500 });
+  try {
+    catalog.configure({ token: "tok", dbId: "db123", project: "test" });
+    assert.equal(await catalog.isJobEnabled("myjob"), true);
+  } finally {
+    global.fetch = origFetch;
+  }
+});
+
+test("createBackgroundJob skips when catalog disables job", async () => {
+  const calls = [];
+  const origFetch = global.fetch;
+  global.fetch = async () => ({
+    ok: true,
+    json: async () => ({ results: [{ id: "p1", Status: { select: { name: "Disabled" } } }] }),
+  });
+  try {
+    catalog.configure({ token: "tok", dbId: "db123", project: "test" });
+    runtime.configure({ statusTracker: (n, s, d) => calls.push([n, s, d]) });
+    let ran = false;
+    const job = runtime.createBackgroundJob("gated", async () => { ran = true; });
+    await job();
+    assert.equal(ran, false);
+    assert.deepEqual(calls, [["gated", "skipped-disabled", 0]]);
+  } finally {
+    global.fetch = origFetch;
+  }
+});
+
 test("catalog _classifyError maps error messages", () => {
   assert.equal(catalog._classifyError(new Error("query failed: 404")), "db_not_found_or_unshared");
   assert.equal(catalog._classifyError(new Error("query failed: 401")), "auth_denied");

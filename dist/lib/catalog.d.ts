@@ -26,6 +26,7 @@ export declare function isConfigured(): boolean;
 export declare function _detectSourceFile(): string;
 export declare function _classifyError(err: unknown): ErrorKind;
 export declare function syncSchedulerToCatalog(req: SyncRequest): Promise<void>;
+export declare function isJobEnabled(name: string): Promise<boolean>;
 export declare function _reset(): void;
 export {};
 //# sourceMappingURL=catalog.d.ts.map

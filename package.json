@@ -1,6 +1,6 @@
 {
   "name": "@acegalaxy/lib-scheduler-runtime",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Notion-backed cron catalog for Node.js — see all your scheduled jobs in one Notion table, with auto-tracked status, last run, and errors. Pluggable cron adapter + reporter + status tracker.",
   "main": "dist/index.js",
   "scripts": {

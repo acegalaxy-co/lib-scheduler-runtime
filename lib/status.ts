@@ -3,7 +3,7 @@
 // Pluggable status tracker. Default = no-op. Project injects a real tracker
 // (e.g. Nexus `agent-monitor.trackJobStatus`) via runtime config.
 
-export type JobStatus = "running" | "done" | "failed" | "skipped";
+export type JobStatus = "running" | "done" | "failed" | "skipped" | "skipped-disabled";
 export type StatusTracker = (name: string, status: JobStatus, durationMs?: number) => void;
 
 const _noop: StatusTracker = () => {};

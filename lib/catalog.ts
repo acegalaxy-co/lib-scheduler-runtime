@@ -219,6 +219,21 @@ export async function syncSchedulerToCatalog(req: SyncRequest): Promise<void> {
   }
 }
 
+export async function isJobEnabled(name: string): Promise<boolean> {
+  if (!isConfigured() || !_config || !_config.enabled()) return true;
+  try {
+    const existing = await _fetchExistingRow(name);
+    if (!existing) return true;
+    const status = existing["Status"] as { select?: { name?: string } } | undefined;
+    return status?.select?.name !== "Disabled";
+  } catch (err) {
+    const kind = _classifyError(err);
+    const msg = err instanceof Error ? err.message : String(err);
+    console.warn(`[scheduler-runtime/catalog] isJobEnabled(${name}): ${kind} — ${msg}`);
+    return true;
+  }
+}
+
 export function _reset(): void {
   _config = null;
   _syncedThisProcess.clear();
@@ -229,6 +244,7 @@ module.exports = {
   configure,
   isConfigured,
   syncSchedulerToCatalog,
+  isJobEnabled,
   _detectSourceFile,
   _classifyError,
   _reset,

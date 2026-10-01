@@ -5,6 +5,7 @@ exports.isConfigured = isConfigured;
 exports._detectSourceFile = _detectSourceFile;
 exports._classifyError = _classifyError;
 exports.syncSchedulerToCatalog = syncSchedulerToCatalog;
+exports.isJobEnabled = isJobEnabled;
 exports._reset = _reset;
 // Notion Scheduler Catalog auto-sync.
 //
@@ -187,6 +188,23 @@ async function syncSchedulerToCatalog(req) {
         _maybeAlert(kind, name, msg).catch(() => { });
     }
 }
+async function isJobEnabled(name) {
+    if (!isConfigured() || !_config || !_config.enabled())
+        return true;
+    try {
+        const existing = await _fetchExistingRow(name);
+        if (!existing)
+            return true;
+        const status = existing["Status"];
+        return status?.select?.name !== "Disabled";
+    }
+    catch (err) {
+        const kind = _classifyError(err);
+        const msg = err instanceof Error ? err.message : String(err);
+        console.warn(`[scheduler-runtime/catalog] isJobEnabled(${name}): ${kind} — ${msg}`);
+        return true;
+    }
+}
 function _reset() {
     _config = null;
     _syncedThisProcess.clear();
@@ -196,6 +214,7 @@ module.exports = {
     configure,
     isConfigured,
     syncSchedulerToCatalog,
+    isJobEnabled,
     _detectSourceFile,
     _classifyError,
     _reset,

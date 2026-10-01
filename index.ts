@@ -68,6 +68,11 @@ export function createBackgroundJob(name: string, fn: () => Promise<void> | void
     }
     const start = Date.now();
     try {
+      if (!(await catalog.isJobEnabled(name))) {
+        console.log(`⏸️ ${name} skipped — disabled via Notion catalog`);
+        status.track(name, "skipped-disabled", 0);
+        return;
+      }
       status.track(name, "running");
       console.log(`⏰ Cron triggered: ${name}`);
       await fn();
@@ -95,6 +100,11 @@ export function createReportJob(
     const start = Date.now();
     const tag = `${name}:${mode || ""}`;
     try {
+      if (!(await catalog.isJobEnabled(name))) {
+        console.log(`⏸️ ${name} skipped — disabled via Notion catalog`);
+        status.track(tag, "skipped-disabled", 0);
+        return;
+      }
       status.track(tag, "running");
       console.log(`⏰ Cron triggered: ${name} (${mode || ""}) — pausing other schedulers`);
       await fn(mode);

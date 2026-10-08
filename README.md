@@ -47,7 +47,7 @@ runtime.configure({
   reporter: (label, err) => myTelegramAlert(label, err),
   statusTracker: (name, status, ms) => myStatusFile(name, status, ms),
   catalog: {
-    token: process.env.NOTION_API_KEY,
+    token: process.env.NOTION_TOKEN,
     dbId: process.env.NOTION_DB_SCHEDULER_CATALOG,
     project: "nexus",                                 // slug for filtering
     host: "PROD",                                     // or "LOCAL"

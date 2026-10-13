@@ -213,11 +213,39 @@ test("isJobEnabled returns false when row Status=Disabled", async () => {
   const origFetch = global.fetch;
   global.fetch = async () => ({
     ok: true,
-    json: async () => ({ results: [{ id: "p1", Status: { select: { name: "Disabled" } } }] }),
+    json: async () => ({ results: [{ id: "p1", properties: { Status: { select: { name: "Disabled" } } } }] }),
   });
   try {
     catalog.configure({ token: "tok", dbId: "db123", project: "test" });
     assert.equal(await catalog.isJobEnabled("myjob"), false);
+  } finally {
+    global.fetch = origFetch;
+  }
+});
+
+test("isJobEnabled returns true when row Status=Active", async () => {
+  const origFetch = global.fetch;
+  global.fetch = async () => ({
+    ok: true,
+    json: async () => ({ results: [{ id: "p1", properties: { Status: { select: { name: "Active" } } } }] }),
+  });
+  try {
+    catalog.configure({ token: "tok", dbId: "db123", project: "test" });
+    assert.equal(await catalog.isJobEnabled("myjob"), true);
+  } finally {
+    global.fetch = origFetch;
+  }
+});
+
+test("isJobEnabled returns true when row has no Status", async () => {
+  const origFetch = global.fetch;
+  global.fetch = async () => ({
+    ok: true,
+    json: async () => ({ results: [{ id: "p1", properties: {} }] }),
+  });
+  try {
+    catalog.configure({ token: "tok", dbId: "db123", project: "test" });
+    assert.equal(await catalog.isJobEnabled("myjob"), true);
   } finally {
     global.fetch = origFetch;
   }
@@ -250,7 +278,7 @@ test("createBackgroundJob skips when catalog disables job", async () => {
   const origFetch = global.fetch;
   global.fetch = async () => ({
     ok: true,
-    json: async () => ({ results: [{ id: "p1", Status: { select: { name: "Disabled" } } }] }),
+    json: async () => ({ results: [{ id: "p1", properties: { Status: { select: { name: "Disabled" } } } }] }),
   });
   try {
     catalog.configure({ token: "tok", dbId: "db123", project: "test" });

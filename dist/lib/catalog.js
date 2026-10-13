@@ -195,7 +195,8 @@ async function isJobEnabled(name) {
         const existing = await _fetchExistingRow(name);
         if (!existing)
             return true;
-        const status = existing["Status"];
+        const props = existing["properties"];
+        const status = props?.["Status"];
         return status?.select?.name !== "Disabled";
     }
     catch (err) {

@@ -224,7 +224,8 @@ export async function isJobEnabled(name: string): Promise<boolean> {
   try {
     const existing = await _fetchExistingRow(name);
     if (!existing) return true;
-    const status = existing["Status"] as { select?: { name?: string } } | undefined;
+    const props = existing["properties"] as Record<string, unknown> | undefined;
+    const status = props?.["Status"] as { select?: { name?: string } } | undefined;
     return status?.select?.name !== "Disabled";
   } catch (err) {
     const kind = _classifyError(err);

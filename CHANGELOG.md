@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-10-13
+
+### Fixed
+- `isJobEnabled(name)` read `Status` from the top level of the Notion page instead of `properties.Status`, so it always returned `true` and `Status=Disabled` never stopped a job.
+
 ## [0.3.0] - 2026-10-01
 
 ### Added

@@ -20,11 +20,7 @@
     },
     {
       "path": ".claude/hooks/pre-bash-gate.sh",
-      "sha256": "16a67e604a5d14e9cdeccef4c091a92b6aab1564a1cc0340358662a13b52ca39"
-    },
-    {
-      "path": ".claude/hooks/pre-browser-profile-gate.sh",
-      "sha256": "358ec503235982886bfc95e55173585c2db2c7acdd0d4a02237d5d8a9182aba7"
+      "sha256": "751d9d09808923661327d3c64083c776256a098dd9e2556abdfe8b183be28a37"
     },
     {
       "path": ".claude/hooks/pre-compact-guard.sh",
@@ -36,11 +32,11 @@
     },
     {
       "path": ".claude/hooks/pre-edit-orchestrator-gate.sh",
-      "sha256": "d4cd8afc68265d5b8bb06c85bd1bb9775c18fbe44b41dbe6d4565533945a9681"
+      "sha256": "f52b10ef7e371ce91c9a62d818de608f7b5f79c16303c159b518a18d4a86ab59"
     },
     {
       "path": ".claude/hooks/pre-edit-service-alert-gate.sh",
-      "sha256": "8cd1a32537518d8c073091005b5325fb57e41a2ea5ea44c8a2002d0b186e8891"
+      "sha256": "7eba64aaaaf7a7cfb83a1e7fc2cdc46a5a227fa518fa53709cf47b8e178e998e"
     },
     {
       "path": ".claude/hooks/pre-read-inject-dir-doc.sh",
@@ -48,67 +44,19 @@
     },
     {
       "path": ".claude/hooks/pre-task-dispatch-gate.sh",
-      "sha256": "02514412d3763555b2b6aba074107c2e8081a5aebbabbcaf7fe46bd237d28c25"
+      "sha256": "53d9791ad11232ce9001956094a862b5056dbbc02c7d192c716b1fdb827636b7"
     },
     {
       "path": ".claude/hooks/session-start.sh",
-      "sha256": "fe351ee052af7eebea683babb6d53c591aabbf83aad34f1cc42e2d54c3ba2e0e"
+      "sha256": "9e2c633551c16533e9b08541a6adda75f422a68c20aa51d2d5e5820600ea3cef"
     },
     {
       "path": ".claude/hooks/subagent-stop-record.sh",
       "sha256": "2766087d4de23c62ac681bd71bd2190a914f20862d2067a4989e99b405c9b5fc"
     },
     {
-      "path": ".claude/rules/common/git-conventions.md",
-      "sha256": "00f1670de40dabd01810454f6d2990d8a9f91f5449d7855d2cab840fa83d7aa3"
-    },
-    {
-      "path": ".claude/skills/ace-apk-game-remaker/SKILL.md",
-      "sha256": "b36b9d89b2b7e106048f07242f7c93e32762f706a461b6449d6fd52b5447b156"
-    },
-    {
-      "path": ".claude/skills/ace-browser-proxy/SKILL.md",
-      "sha256": "d5c8d1546a794848a09f8ec53b70265ee7fb1ae864f200298d9bbcb6a2bef527"
-    },
-    {
-      "path": ".claude/skills/ace-browser-proxy/browser-proxy.sh",
-      "sha256": "e18f90d5ebdca0d18089561eb7d62029355261c6127238ef0e382ec4bd9aa6ec"
-    },
-    {
-      "path": ".claude/skills/ace-veepn/SKILL.md",
-      "sha256": "aecdc776822aa260445acaadbd6e2bf3f51653b5ad072d846b9247f60fbdbe2b"
-    },
-    {
-      "path": ".claude/skills/ace-veepn/check.sh",
-      "sha256": "4ccf3604fe01fd2e706953f214d0fcec3f8314348a7016269acc08d016c0afca"
-    },
-    {
-      "path": ".claude/skills/ace-veepn/close.mjs",
-      "sha256": "8bf665911a09989dc21fbc85891bc78a280124ee4bd8474f1533de7628ba574e"
-    },
-    {
-      "path": ".claude/skills/ace-veepn/launch.sh",
-      "sha256": "f4a42d78dc0868c2ead0605c76f79e34b2a74e91bf50da2892a6177a59333360"
-    },
-    {
-      "path": ".claude/skills/ace-veepn/login.mjs",
-      "sha256": "1d3faed38f845ec31bd81f68168300776719348aea1f7e33a4be3560c0e45113"
-    },
-    {
-      "path": ".claude/skills/browser-ui-preview/SKILL.md",
-      "sha256": "27f9e3f85fe1d577f02488b1c048d9558ef6391d35a9e8345a34509710f094d8"
-    },
-    {
-      "path": ".claude/skills/browser-web/SKILL.md",
-      "sha256": "e51cee0ef0f85b86367ffea9b258a89769f9584f4b24ba39721e5939d4adfa73"
-    },
-    {
-      "path": ".claude/skills/clean-up-project/SKILL.md",
-      "sha256": "ebdc03bd121b247a4ccee7ecea8de8486ecfed0b725ea53095dff879abf89245"
-    },
-    {
-      "path": ".claude/skills/deploy-doc/SKILL.md",
-      "sha256": "ab7ec5760fca68821eada1d47dbc203b086c67c16a4c51ad69cb99208280b1bc"
+      "path": ".claude/rules/project/harness-vars.md",
+      "sha256": "6cbda8e6f96935e06f217b95be265ecd1de550b60862e418ca2bd7d93ef1f8e8"
     },
     {
       "path": ".claude/skills/deploy-production/SKILL.md",
@@ -125,14 +73,6 @@
     {
       "path": ".claude/skills/deploy-production/rsync.md",
       "sha256": "9631f2ac884babcecb40532fa36349b6c0dd081d6ac599697119e9262c52539c"
-    },
-    {
-      "path": ".claude/skills/recap/SKILL.md",
-      "sha256": "0f79677f534261148b8f70e6a1e85cc301ae7c9005625b77174d755d0a5dfef9"
-    },
-    {
-      "path": ".claude/skills/task-loop-feature/SKILL.md",
-      "sha256": "cbd3961e84f26f3e0c6154aaa8ed8ca7e9dfb500a0e8789861f59641cef42276"
     },
     {
       "path": ".claude/statusline-orchestration.sh",
@@ -164,7 +104,7 @@
     },
     {
       "path": "scripts/delegate/run-gemini.sh",
-      "sha256": "66bd0a5c76ad885bdc7eacd78fdfd5169355a2167860647af8bac15f7636bb1c"
+      "sha256": "526a25e5ea37c72a8df67433f6d3160e15558e13726892bdc53c22f13354444f"
     }
   ],
   "preservePaths": [
@@ -236,11 +176,6 @@
       {
         "event": "PreToolUse",
         "matcher": "Bash",
-        "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/pre-browser-profile-gate.sh"
-      },
-      {
-        "event": "PreToolUse",
-        "matcher": "Bash",
         "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/pre-commit-deploy-doc.sh"
       },
       {
@@ -267,11 +202,6 @@
         "event": "PreToolUse",
         "matcher": "Task",
         "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/pre-task-dispatch-gate.sh"
-      },
-      {
-        "event": "PreToolUse",
-        "matcher": "mcp__(pw_|cloak|playwright|browser).*",
-        "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/pre-browser-profile-gate.sh"
       },
       {
         "event": "SessionStart",
